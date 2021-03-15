@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import sample.controller.Partido;
 
@@ -19,8 +21,19 @@ public class Main extends Application {
 
         //Injectar Scene i Stage
         Partido partido = loader.getController();
-        partido.setScenePrincipal(scene);
-        partido.setStagePrincipal(primaryStage);
+        partido.setScene(scene);
+        partido.setStage(primaryStage);
+
+        Image image = new Image("Drawable/campo_futbol.jpg");
+        BackgroundImage backgroundimage = new BackgroundImage(image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+
+
+        // set background
+
 
         //CSS
 //        http://fxexperience.com/2011/12/styling-fx-buttons-with-css/
